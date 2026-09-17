@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageCircle, Send } from "lucide-react";
+import { Mail, MessageCircle, Send, MapPin, Instagram, Globe2 } from "lucide-react";
 import { toast } from "sonner";
 
 const ContactSection = () => {
@@ -23,68 +23,41 @@ const ContactSection = () => {
     setFormData({ name: "", email: "", company: "", message: "" });
   };
 
-  const whatsappUrl = `https://wa.me/5491100000000?text=${encodeURIComponent("Hola, me gustaría hablar con un especialista de Norax Technology.")}`;
+  const whatsappUrl = `https://wa.me/573004857022?text=${encodeURIComponent("Hola, me gustaría hablar con un especialista de Norax Technology.")}`;
 
   return (
-    <section id="contacto" className="py-24 gradient-navy">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 rounded-full text-xs font-medium tracking-widest uppercase border border-electric/30 text-electric bg-electric/10">
-            Contacto
-          </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mb-4">
-            Hablemos de tu <span className="text-gradient">infraestructura</span>
+    <section id="contacto" className="bg-secondary py-24 lg:py-32">
+      <div className="container px-5">
+        <div className="mb-16 max-w-4xl">
+          <span className="section-label text-accent">04 / Contacto</span>
+          <h2 className="mt-5 text-4xl font-bold text-secondary-foreground md:text-6xl">
+            Hablemos de cómo podemos <span className="text-gradient">ayudarte.</span>
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Contáctanos para una evaluación gratuita de tu infraestructura tecnológica.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid gap-14 lg:grid-cols-2">
           {/* Contact info */}
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-electric/10 flex items-center justify-center flex-shrink-0">
-                <Mail size={20} className="text-electric" />
-              </div>
-              <div>
-                <h3 className="text-sm font-heading font-semibold text-secondary-foreground mb-1">
-                  Correo electrónico
-                </h3>
-                <a href="mailto:soporte@noraxtech.com" className="text-muted-foreground hover:text-electric transition-colors">
-                  soporte@noraxtech.com
-                </a>
-              </div>
+          <div className="space-y-7">
+            <p className="max-w-md text-lg leading-relaxed text-muted-foreground">Cuéntanos qué necesita tu empresa. Revisaremos tu caso y te orientaremos hacia una solución clara.</p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <a href="mailto:norax.technology@outlook.com" className="contact-link"><Mail /><span>norax.technology@outlook.com</span></a>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="contact-link"><MessageCircle /><span>+57 300 485 7022</span></a>
+              <a href="https://instagram.com/norax.technology" target="_blank" rel="noopener noreferrer" className="contact-link"><Instagram /><span>@norax.technology</span></a>
+              <div className="contact-link"><MapPin /><span>Medellín, Colombia</span></div>
+              <a href="https://www.noraxtechnology.com" target="_blank" rel="noopener noreferrer" className="contact-link sm:col-span-2"><Globe2 /><span>www.noraxtechnology.com</span></a>
             </div>
 
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-electric/10 flex items-center justify-center flex-shrink-0">
-                <MessageCircle size={20} className="text-electric" />
-              </div>
-              <div>
-                <h3 className="text-sm font-heading font-semibold text-secondary-foreground mb-1">
-                  WhatsApp
-                </h3>
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-1 px-5 py-2.5 rounded-lg gradient-electric text-primary-foreground text-sm font-medium glow-electric hover:opacity-90 transition-opacity"
-                >
-                  <MessageCircle size={16} />
-                  Hablar con un especialista
-                </a>
-              </div>
-            </div>
+            <Button asChild size="lg" className="h-14 px-7 shadow-electric"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer"><MessageCircle /> Hablar con un especialista</a></Button>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4 border border-border bg-card/50 p-6 md:p-8">
+            <h3 className="mb-6 text-xl font-semibold text-card-foreground">Solicita un diagnóstico</h3>
             <Input
               placeholder="Nombre *"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="bg-navy-light/50 border-navy-light text-secondary-foreground placeholder:text-muted-foreground"
+              className="h-12 border-border bg-secondary text-secondary-foreground placeholder:text-muted-foreground"
               maxLength={100}
             />
             <Input
@@ -92,14 +65,14 @@ const ContactSection = () => {
               placeholder="Correo electrónico *"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="bg-navy-light/50 border-navy-light text-secondary-foreground placeholder:text-muted-foreground"
+              className="h-12 border-border bg-secondary text-secondary-foreground placeholder:text-muted-foreground"
               maxLength={255}
             />
             <Input
               placeholder="Empresa"
               value={formData.company}
               onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="bg-navy-light/50 border-navy-light text-secondary-foreground placeholder:text-muted-foreground"
+              className="h-12 border-border bg-secondary text-secondary-foreground placeholder:text-muted-foreground"
               maxLength={100}
             />
             <Textarea
@@ -107,10 +80,10 @@ const ContactSection = () => {
               rows={4}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="bg-navy-light/50 border-navy-light text-secondary-foreground placeholder:text-muted-foreground resize-none"
+              className="resize-none border-border bg-secondary text-secondary-foreground placeholder:text-muted-foreground"
               maxLength={1000}
             />
-            <Button type="submit" className="w-full gradient-electric text-primary-foreground glow-electric py-6">
+            <Button type="submit" className="h-12 w-full shadow-electric">
               <Send size={16} className="mr-2" />
               Enviar mensaje
             </Button>

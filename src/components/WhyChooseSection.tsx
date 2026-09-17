@@ -1,51 +1,50 @@
-import { Award, Building2, TrendingUp, ShieldCheck } from "lucide-react";
+import { Search, Lightbulb, Settings, TrendingUp } from "lucide-react";
 
 const reasons = [
   {
-    icon: Award,
-    title: "Experiencia en infraestructura",
-    description: "Años de experiencia diseñando e implementando soluciones de infraestructura tecnológica.",
+    icon: Search,
+    title: "Analizamos",
+    description: "Entendemos tus necesidades y objetivos.",
   },
   {
-    icon: Building2,
-    title: "Enfoque en empresas",
-    description: "Entendemos las necesidades de las PYMEs y adaptamos nuestras soluciones a su realidad.",
+    icon: Lightbulb,
+    title: "Diseñamos",
+    description: "Proponemos soluciones tecnológicas a la medida.",
+  },
+  {
+    icon: Settings,
+    title: "Implementamos",
+    description: "Ejecutamos con calidad, cumpliendo tiempos y estándares.",
   },
   {
     icon: TrendingUp,
-    title: "Soluciones escalables",
-    description: "Infraestructura que crece junto con tu empresa, sin necesidad de rehacer todo.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Soporte confiable",
-    description: "Respuesta rápida y efectiva cuando más lo necesitas. Estamos contigo.",
+    title: "Acompañamos",
+    description: "Brindamos soporte y optimización continua.",
   },
 ];
 
 const WhyChooseSection = () => {
   return (
-    <section className="py-24 gradient-navy">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 rounded-full text-xs font-medium tracking-widest uppercase border border-electric/30 text-electric bg-electric/10">
-            ¿Por qué Norax?
-          </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-secondary-foreground mb-4">
-            Por qué elegir <span className="text-gradient">Norax Technology</span>
+    <section id="enfoque" className="bg-background py-24 lg:py-32">
+      <div className="container px-5">
+        <div className="mb-16 max-w-4xl">
+          <span className="section-label">03 / Nuestro enfoque</span>
+          <h2 className="mt-5 text-4xl font-bold leading-tight text-foreground md:text-6xl">
+            Entendemos tu negocio, impulsamos <span className="text-primary">tu futuro.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <div className="grid gap-0 lg:grid-cols-4">
           {reasons.map((reason, index) => (
-            <div key={index} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-electric/10 border border-electric/20 flex items-center justify-center mx-auto mb-5">
-                <reason.icon size={26} className="text-electric" />
+            <div key={index} className="relative border-t border-border px-0 py-8 lg:border-l lg:border-t-0 lg:px-8 lg:py-0 first:lg:border-l-0 first:lg:pl-0">
+              <div className="mb-10 flex h-16 w-16 items-center justify-center rounded-full border border-primary/25 bg-primary/10">
+                <reason.icon size={26} className="text-primary" />
               </div>
-              <h3 className="text-base font-heading font-semibold text-secondary-foreground mb-2">
-                {reason.title}
+              <span className="mb-3 block font-mono text-xs text-primary">0{index + 1}</span>
+              <h3 className="mb-3 text-xl font-semibold text-foreground">
+                {reason.title.toUpperCase()}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {reason.description}
               </p>
             </div>

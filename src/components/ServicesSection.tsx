@@ -1,62 +1,69 @@
-import { Network, Cable, Headset, LifeBuoy, Server } from "lucide-react";
+import { Network, Headset, LifeBuoy, Server, ShieldCheck, ClipboardPenLine, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
-    icon: Network,
-    title: "Infraestructura de red",
-    description: "Diseño, instalación y optimización de redes empresariales.",
+    icon: Server,
+    title: "Infraestructura tecnológica",
+    description: "Diseño, implementación y mantenimiento de servidores, almacenamiento, virtualización y centros de datos.",
   },
   {
-    icon: Cable,
-    title: "Cableado estructurado",
-    description: "Implementación de cableado profesional para redes corporativas.",
+    icon: Network,
+    title: "Redes empresariales",
+    description: "Diseño, configuración y administración de redes cableadas e inalámbricas seguras y eficientes.",
   },
   {
     icon: Headset,
     title: "Soporte técnico empresarial",
-    description: "Resolución de incidentes y soporte para equipos y usuarios.",
+    description: "Soporte remoto y presencial para equipos, software y usuarios, con resolución rápida y efectiva.",
   },
   {
     icon: LifeBuoy,
     title: "Mesa de ayuda TI",
-    description: "Externalización del soporte técnico para empresas.",
+    description: "Gestión de incidencias y requerimientos con seguimiento y atención oportuna para tu equipo.",
   },
   {
-    icon: Server,
-    title: "Administración de infraestructura TI",
-    description: "Gestión de servidores, redes y sistemas empresariales.",
+    icon: ShieldCheck,
+    title: "Seguridad informática",
+    description: "Buenas prácticas, firewalls, copias de seguridad y protección de datos.",
+  },
+  {
+    icon: ClipboardPenLine,
+    title: "Asesoría y proyectos",
+    description: "Planeación y ejecución de proyectos tecnológicos que impulsan la transformación digital.",
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="servicios" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 rounded-full text-xs font-medium tracking-widest uppercase text-primary bg-primary/10">
-            Servicios
-          </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Soluciones tecnológicas <span className="text-gradient">integrales</span>
+    <section id="servicios" className="bg-background py-24 lg:py-32">
+      <div className="container px-5">
+        <div className="mb-14 grid gap-6 lg:grid-cols-[1fr_0.75fr] lg:items-end">
+          <div>
+            <span className="section-label">01 / Nuestros servicios</span>
+            <h2 className="mt-5 max-w-3xl text-4xl font-bold leading-tight text-foreground md:text-6xl">
+              Soluciones tecnológicas para <span className="text-primary">cada necesidad.</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Ofrecemos servicios especializados en infraestructura TI para que tu empresa opere con eficiencia y seguridad.
+          </div>
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground lg:justify-self-end">
+            Un portafolio integral para garantizar el correcto funcionamiento de tu infraestructura tecnológica.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid border-l border-t border-border md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <div
               key={index}
-              className="group bg-card rounded-lg p-8 border border-border hover:border-electric/40 transition-all duration-300 hover:shadow-lg hover:shadow-electric/5"
+              className="group relative min-h-72 border-b border-r border-border bg-card p-8 transition-colors duration-300 hover:bg-muted/60 lg:p-10"
             >
-              <div className="w-12 h-12 rounded-lg gradient-electric flex items-center justify-center mb-5 group-hover:glow-electric transition-all">
-                <service.icon size={24} className="text-primary-foreground" />
+              <div className="mb-12 flex items-start justify-between">
+                <service.icon size={30} className="text-primary" strokeWidth={1.7} />
+                <ArrowUpRight className="h-5 w-5 text-border transition-colors group-hover:text-primary" />
               </div>
-              <h3 className="text-lg font-heading font-semibold text-card-foreground mb-2">
+              <span className="mb-3 block font-mono text-[11px] text-primary">0{index + 1}</span>
+              <h3 className="mb-3 text-xl font-semibold text-card-foreground">
                 {service.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {service.description}
               </p>
             </div>

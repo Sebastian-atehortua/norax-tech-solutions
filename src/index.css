@@ -1,45 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 220 25% 97%;
-    --foreground: 220 40% 13%;
+    --background: 210 33% 97%;
+    --foreground: 211 65% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 40% 13%;
+    --card-foreground: 211 65% 9%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 220 40% 13%;
 
-    --primary: 217 91% 50%;
+    --primary: 208 100% 43%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 60% 8%;
+    --secondary: 213 66% 9%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 20% 93%;
-    --muted-foreground: 220 15% 46%;
+    --muted: 210 25% 92%;
+    --muted-foreground: 212 12% 55%;
 
-    --accent: 217 100% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 203 100% 64%;
+    --accent-foreground: 213 66% 9%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
-    --ring: 217 91% 50%;
+    --border: 212 20% 22%;
+    --input: 212 20% 22%;
+    --ring: 203 100% 64%;
 
-    --radius: 0.75rem;
+    --radius: 0.4rem;
 
-    --navy: 220 60% 8%;
-    --navy-light: 220 45% 15%;
-    --electric: 217 100% 58%;
-    --electric-glow: 217 100% 65%;
+    --navy: 213 66% 9%;
+    --navy-light: 211 36% 16%;
+    --electric: 208 100% 43%;
+    --electric-glow: 203 100% 64%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -107,6 +105,32 @@
 
   .glow-electric {
     box-shadow: 0 0 20px hsl(var(--electric) / 0.3), 0 0 40px hsl(var(--electric) / 0.1);
+  }
+
+  .shadow-electric {
+    box-shadow: 0 14px 34px hsl(var(--primary) / 0.22);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, hsl(var(--secondary)) 0%, hsl(var(--secondary) / 0.96) 42%, hsl(var(--secondary) / 0.45) 72%, hsl(var(--secondary) / 0.7) 100%);
+  }
+
+  .tech-grid {
+    background-image: radial-gradient(hsl(var(--accent) / 0.28) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to right, black, transparent 72%);
+  }
+
+  .section-label {
+    @apply font-mono text-xs font-semibold uppercase text-primary;
+  }
+
+  .contact-link {
+    @apply flex min-h-20 items-center gap-3 border border-border bg-card/40 p-4 text-sm text-muted-foreground transition-colors hover:border-primary/60 hover:text-secondary-foreground;
+  }
+
+  .contact-link svg {
+    @apply h-5 w-5 shrink-0 text-accent;
   }
 
   .text-gradient {

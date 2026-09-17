@@ -1,24 +1,25 @@
 const AboutSection = () => {
   return (
-    <section id="nosotros" className="py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block px-4 py-1.5 mb-4 rounded-full text-xs font-medium tracking-widest uppercase text-primary bg-primary/10">
-            Sobre nosotros
-          </span>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
-            Tu socio tecnológico <span className="text-gradient">estratégico</span>
+    <section id="nosotros" className="bg-secondary py-24 text-secondary-foreground lg:py-32">
+      <div className="container grid gap-14 px-5 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <span className="section-label text-accent">02 / Quiénes somos</span>
+          <h2 className="mt-5 text-4xl font-bold leading-tight md:text-6xl">
+            Tu aliado tecnológico en <span className="text-gradient">cada etapa.</span>
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Norax Technology es una empresa enfocada en brindar soluciones
-            tecnológicas empresariales que permiten a las organizaciones operar
-            de forma eficiente, segura y preparada para crecer.
+        </div>
+        <div className="border-l border-border pl-6 md:pl-10 lg:pt-2">
+          <p className="mb-6 text-xl leading-relaxed text-secondary-foreground/90 md:text-2xl">
+            Somos una empresa colombiana especializada en infraestructura tecnológica y soporte TI.
           </p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Nuestro objetivo es convertirnos en un socio tecnológico estratégico
-            para las empresas, acompañándolas en cada etapa de su crecimiento
-            con infraestructura confiable y soporte de primer nivel.
+          <p className="mb-10 text-lg leading-relaxed text-muted-foreground">
+            Ayudamos a las empresas a optimizar sus recursos tecnológicos, garantizando estabilidad, seguridad y eficiencia. Trabajamos como aliados estratégicos con soluciones personalizadas que impulsan su crecimiento.
           </p>
+          <div className="grid grid-cols-2 gap-px bg-border">
+            {["Confianza", "Innovación", "Compromiso", "Crecimiento"].map((value) => (
+              <div key={value} className="bg-secondary p-5 text-sm font-semibold uppercase text-secondary-foreground">{value}</div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
