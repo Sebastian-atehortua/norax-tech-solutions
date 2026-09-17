@@ -1,52 +1,53 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import portfolioAsset from "@/assets/Portafolio_Norax.pdf.asset.json";
 
 const HeroSection = () => {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-[92vh] items-center overflow-hidden bg-secondary pt-24"
     >
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-y-0 right-0 w-full bg-cover bg-center bg-no-repeat opacity-50 lg:w-[58%]"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-      <div className="absolute inset-0 gradient-navy opacity-80" />
+      <div className="absolute inset-0 hero-overlay" />
+      <div className="absolute inset-0 tech-grid opacity-30" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center max-w-4xl pt-16">
-        <div className="animate-fade-in-up">
-          <span className="inline-block px-4 py-1.5 mb-6 rounded-full text-xs font-medium tracking-widest uppercase border border-electric/30 text-electric bg-electric/10">
-            Infraestructura TI para PYMEs
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-secondary-foreground leading-tight mb-6">
-            Infraestructura Tecnológica{" "}
-            <span className="text-gradient">Profesional</span> para Empresas
+      <div className="container relative z-10 px-5 py-20 lg:py-28">
+        <div className="max-w-3xl animate-fade-in-up">
+          <div className="mb-7 flex w-fit items-center gap-3 border border-accent/25 bg-accent/10 px-3 py-2 font-mono text-[11px] font-semibold uppercase text-accent">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Infraestructura TI para empresas
+          </div>
+          <h1 className="mb-7 text-5xl font-bold leading-[1.02] text-secondary-foreground sm:text-6xl lg:text-8xl">
+            Tecnología que conecta y hace <span className="text-gradient">crecer</span> tu empresa.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-            En Norax Technology ayudamos a las empresas a diseñar, implementar y
-            administrar su infraestructura tecnológica de forma segura, escalable
-            y eficiente.
+          <p className="mb-10 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Soluciones TI confiables y escalables para que tu empresa opere con estabilidad, seguridad y eficiencia.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="gradient-electric text-primary-foreground glow-electric text-base px-8 py-6"
-            >
-              <a href="#contacto" className="flex items-center gap-2">
+          <div className="flex flex-col gap-4 sm:flex-row">
+            <Button asChild size="lg" className="h-14 px-8 text-base shadow-electric">
+              <a href="#contacto">
                 Solicitar diagnóstico tecnológico
                 <ArrowRight size={18} />
               </a>
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-electric/30 text-secondary-foreground hover:bg-electric/10 text-base px-8 py-6"
-            >
-              <a href="#servicios">Ver servicios</a>
+            <Button asChild size="lg" variant="outline" className="h-14 border-border bg-secondary/40 px-8 text-base text-secondary-foreground hover:bg-muted">
+              <a href={portfolioAsset.url} target="_blank" rel="noreferrer">Ver portafolio</a>
             </Button>
+          </div>
+          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 border-t border-border/60 pt-6 text-sm text-muted-foreground">
+            {["Atención personalizada", "Soporte confiable", "Soluciones escalables"].map((item) => (
+              <span key={item} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-accent" />{item}</span>
+            ))}
           </div>
         </div>
       </div>
