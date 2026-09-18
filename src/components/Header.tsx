@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoAsset from "@/assets/norax-logo.png.asset.json";
 
 const navItems = [
   { label: "Servicios", href: "#servicios" },
@@ -17,7 +16,7 @@ const Header = () => {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-secondary/85 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between px-5">
         <a href="#inicio" className="flex items-center" aria-label="Norax Technology, inicio">
-          <img src={logoAsset.url} alt="Norax Technology" className="h-11 w-auto object-contain" />
+          <img src="/norax-logo.png" alt="Norax Technology" className="h-11 w-auto object-contain" />
         </a>
 
         {/* Desktop nav */}
