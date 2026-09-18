@@ -15,10 +15,158 @@
     <meta property="og:description" content="Soluciones tecnológicas confiables y escalables para empresas que avanzan." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="/styles.css" />
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Header -->
+    <header class="header">
+      <div class="container header-inner">
+        <a href="#inicio" class="logo" aria-label="Norax Technology, inicio">
+          <img src="/norax-logo.png" alt="Norax Technology" />
+        </a>
+
+        <nav class="nav-desktop" aria-label="Navegación principal">
+          <a href="#servicios">Servicios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#enfoque">Nuestro enfoque</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#contacto" class="btn btn-primary btn-sm">Solicitar diagnóstico</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav class="nav-mobile" id="navMobile" aria-label="Navegación móvil">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#enfoque">Nuestro enfoque</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#contacto" class="btn btn-primary btn-block">Solicitar diagnóstico</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-grid"></div>
+        <div class="container hero-content">
+          <div class="badge">
+            <span class="pulse"></span>
+            Infraestructura TI para empresas
+          </div>
+          <h1>Tecnología que conecta y hace <span class="text-gradient">crecer</span> tu empresa.</h1>
+          <p class="lead">
+            Soluciones TI confiables y escalables para que tu empresa opere con estabilidad, seguridad y eficiencia.
+          </p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary btn-lg">Solicitar diagnóstico tecnológico &rarr;</a>
+            <a class="btn btn-outline btn-lg" target="_blank" rel="noreferrer"
+               href="/__l5e/assets-v1/263b778e-f882-4b17-a2f9-e3f23a83c3ea/Portafolio_Norax.pdf">Ver portafolio</a>
+          </div>
+          <ul class="hero-points">
+            <li>Atención personalizada</li>
+            <li>Soporte confiable</li>
+            <li>Soluciones escalables</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Servicios -->
+      <section id="servicios" class="section section-light">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="section-label">01 / Nuestros servicios</span>
+              <h2>Soluciones tecnológicas para <span class="text-primary">cada necesidad.</span></h2>
+            </div>
+            <p class="section-intro">
+              Un portafolio integral para garantizar el correcto funcionamiento de tu infraestructura tecnológica.
+            </p>
+          </div>
+          <div class="services-grid" id="servicesGrid"></div>
+        </div>
+      </section>
+
+      <!-- Enfoque -->
+      <section id="enfoque" class="section section-light">
+        <div class="container">
+          <div class="section-head single">
+            <span class="section-label">03 / Nuestro enfoque</span>
+            <h2>Entendemos tu negocio, impulsamos <span class="text-primary">tu futuro.</span></h2>
+          </div>
+          <div class="steps-grid" id="stepsGrid"></div>
+        </div>
+      </section>
+
+      <!-- Nosotros -->
+      <section id="nosotros" class="section section-dark about">
+        <div class="container about-grid">
+          <div>
+            <span class="section-label accent">02 / Quiénes somos</span>
+            <h2>Tu aliado tecnológico en <span class="text-gradient">cada etapa.</span></h2>
+          </div>
+          <div class="about-body">
+            <p class="about-lead">Somos una empresa colombiana especializada en infraestructura tecnológica y soporte TI.</p>
+            <p class="muted">
+              Ayudamos a las empresas a optimizar sus recursos tecnológicos, garantizando estabilidad, seguridad y
+              eficiencia. Trabajamos como aliados estratégicos con soluciones personalizadas que impulsan su crecimiento.
+            </p>
+            <div class="values">
+              <div>Confianza</div><div>Innovación</div><div>Compromiso</div><div>Crecimiento</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto" class="section section-dark">
+        <div class="container">
+          <div class="section-head single">
+            <span class="section-label accent">04 / Contacto</span>
+            <h2 class="light">Hablemos de cómo podemos <span class="text-gradient">ayudarte.</span></h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <p class="muted">Cuéntanos qué necesita tu empresa. Revisaremos tu caso y te orientaremos hacia una solución clara.</p>
+              <div class="contact-links">
+                <a class="contact-link" href="mailto:norax.technology@outlook.com">norax.technology@outlook.com</a>
+                <a class="contact-link" id="waLink" target="_blank" rel="noopener noreferrer" href="#">+57 300 485 7022</a>
+                <a class="contact-link" href="https://instagram.com/norax.technology" target="_blank" rel="noopener noreferrer">@norax.technology</a>
+                <span class="contact-link">Medellín, Colombia</span>
+                <a class="contact-link wide" href="https://www.noraxtechnology.com" target="_blank" rel="noopener noreferrer">www.noraxtechnology.com</a>
+              </div>
+              <a class="btn btn-primary btn-lg" id="waButton" target="_blank" rel="noopener noreferrer" href="#">Hablar con un especialista</a>
+            </div>
+
+            <form class="contact-form" id="contactForm" novalidate>
+              <h3>Solicita un diagnóstico</h3>
+              <input type="text" name="name" placeholder="Nombre *" maxlength="100" />
+              <input type="email" name="email" placeholder="Correo electrónico *" maxlength="255" />
+              <input type="text" name="company" placeholder="Empresa" maxlength="100" />
+              <textarea name="message" rows="4" placeholder="¿En qué podemos ayudarte? *" maxlength="1000"></textarea>
+              <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p class="muted">&copy; <span id="year"></span> Norax Technology. Todos los derechos reservados.</p>
+        <p class="tagline">Soluciones tecnológicas para empresas que avanzan.</p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="/script.js"></script>
   </body>
 </html>
